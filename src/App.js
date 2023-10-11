@@ -15,7 +15,7 @@ const WordCount = () => {
  };
 
  return (
-    <div>
+    <div className="App">
       <h1>Responsive Paragraph Word Counter</h1>
       <textarea
         value={text}
