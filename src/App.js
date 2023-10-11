@@ -16,6 +16,7 @@ const WordCount = () => {
 
  return (
     <div>
+  <h1>Responsive Paragraph Word Counter</h1>
       <textarea
         value={text}
         onChange={handleChange}
