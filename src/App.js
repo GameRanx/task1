@@ -1,17 +1,31 @@
+import React, { useState } from 'react';
 
-import './App.css';
-import C1 from './components/C1';
-import C2 from './components/C2';
-import C4 from './components/C4';
-function App() {
-  return (
-  <div>
-    {/*<h1>State and props</h1>
-    <C1 gift="watch"/> 
-    <C2 />*/}
-    <C4 />
-  </div>
-  );
-}
+const WordCount = () => {
+ const [text, setText] = useState('');
+ const [wordCount, setWordCount] = useState(0);
 
-export default App;
+ const countWords = (text) => {
+    return text.trim().split(/\s+/).length;
+ };
+
+ const handleChange = (e) => {
+    const text = e.target.value;
+    setText(text);
+    setWordCount(countWords(text));
+ };
+
+ return (
+    <div>
+      <textarea
+        value={text}
+        onChange={handleChange}
+        placeholder="Enter your text here..."
+        rows="4"
+        cols="50"
+      />
+      <p>Word Count: {wordCount}</p>
+    </div>
+ );
+};
+
+export default WordCount;
